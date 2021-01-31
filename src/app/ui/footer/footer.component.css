@@ -1,0 +1,40 @@
+
+/*====--FOTTER ---====*/
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .footer_main {
+      padding: 0px 0px 50px 0px;
+    }
+  }
+  
+  
+  
+  .trustlogos {
+    filter: invert(48%) sepia(13%) saturate(50%) hue-rotate(300deg) brightness(80%) contrast(100%);
+    content: url(https://www.authenticireland.com/wp-content/uploads/2018/04/TopTrust1.png);
+    margin: 10px auto;
+    max-width: 100%;
+  }
+  
+  .footer_trust_top {
+    margin-top: 300px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer_trust_top p {
+    font-family: montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(231, 227, 227);
+  }
+  
+  
+  
+  /*============--------------==========================*/
+  
+  
+  
+  

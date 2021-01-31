@@ -1,0 +1,155 @@
+
+
+#main{
+    display:block;
+    width: 40%;
+    margin: auto;
+    
+    padding-top: 150px;
+    }
+    
+    #main2{
+      width: 100%;
+      margin-left: 200;
+    
+      padding-top: 150px;
+      }
+    
+    #main h1{
+      margin-left: 20px;
+    
+      color: rgba(255, 255, 255, 0.664);
+      text-shadow: 1px 1px 30px currentColor;
+    
+      margin-top: 60px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* -====   premiere movie cards   =============- */
+    
+    
+    
+    #main .carouselExampleIndicators{
+      height: 300px;
+      width: 40%;
+      object-fit: contain;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    
+    
+    }
+    
+    #main .carousel-item {
+      width: 100%;
+      height: 100%; /* example */
+      
+    
+    }
+    
+    #main .carousel-item img {
+      width:400px;
+      height:360px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /** -----lastest movies   ========--------------*/
+    
+    #lastest {
+    margin-top: 130px;
+    
+    }
+    
+    #lastest h1{
+    
+      margin-left: 20px;
+      color: rgb(219, 4, 4);
+      text-shadow: 1px 1px 30px currentColor;  margin-top: 40px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /** -----Awesome ==== movies ====--------------*/
+    
+    
+    #Awesome {
+      margin-top: 130px;
+    
+    }
+    
+    
+    #Awesome h1{
+      margin-left: 20px;
+    
+      color: rgb(219, 4, 4);
+      text-shadow: 1px 1px 30px currentColor;
+    
+      margin-top: 60px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    /* cards upcomign movies */
+    #upcoming {
+      margin-top: 130px;
+    
+    
+      text-align: center;
+      margin-top: 80px;
+    }
+    
+    #upcoming h1{
+      color: rgb(255, 255, 255);
+    
+    }
+    
+    .controls-top{
+      display: flex;
+      height: 100px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      
+    
+    }
+    
+    .btn-floating{
+      margin: auto;
+      height: 70px;
+      width:50%;
+    
+    }
+    
+    .card{
+      color: rgb(255, 255, 255);
+      background-color: rgba(255, 0, 0, 0.068);
+    }
+    
+    
+    

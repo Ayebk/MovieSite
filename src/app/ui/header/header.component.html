@@ -1,0 +1,201 @@
+
+
+
+<div>
+<!--navigation-->
+
+<nav>
+    <!---logo--->
+    <a  routerLink=""  class="logo">
+        <img src="./assets/logo6.png" >
+    </a>
+
+
+
+
+
+
+    <!---SidFILTER--->
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; FILTER</span>
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Movies
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Series
+            </label>
+        </div>
+
+        <a>Category</a>
+
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Action
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Adventure
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Comedy
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Drama
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Fantasy
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Horror
+            </label>
+        </div>
+
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Romance
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Thriller
+            </label>
+        </div>
+
+
+        <a>Rating</a>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                G
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                PG
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                PG-13
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                R
+            </label>
+        </div>
+
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                NC-17
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                UNRATED
+            </label>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!---search--->
+    <div class="search">
+        <input type="text" placeholder="Find your movie" size="60">
+        <button aria-expanded="false" type="submit"><i class="fa fa-search "></i></button>
+
+    </div>
+
+    <!----Suggest----->
+    <div>
+        <a   routerLink="/suggetion" routerLinkActive="active" style="text-decoration: none ;color: inherit"><button id="suggest" type="button"
+                class="btn btn-dark">Suggest The Best</button></a>
+    </div>
+
+    <!----log----->
+    <a class="nav-link dropdown-toggle"  id="log" role="button" data-toggle="dropdown" aria-haspopup="true"  type="button">
+        User Profile
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a id="droped" class="dropdown-item" >Profile Account</a>
+        <a id="droped" class="dropdown-item"  routerLink="/watchedliste" routerLinkActive="active">My watched list</a>
+        <div class="dropdown-divider"></div>
+        <a id="logout" class="dropdown-item" >Log Out</a>
+    </div>
+    
+
+
+ 
+
+
+</nav>
+
+
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "450px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+</div>

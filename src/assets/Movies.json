@@ -1,0 +1,24 @@
+[
+    {
+        "id": "1",
+        "name": "harry-potter",
+        "good_reviews": ["very good",", good"," was nice"],
+        "bad_reviews":  ["very bad",", bad"," was bad"]
+    },
+    {
+        "id": "2",
+        "name": "Games of Thrones",
+        "good_reviews": ["very good 1",", good"," was nice"],
+        "bad_reviews":  ["very bad",", bad"," was bad"]    },
+    {
+        "id": "3",
+        "name": "Hunger Games",
+        "good_reviews": ["very good 2 ",", good"," was nice"],
+        "bad_reviews":  ["very bad",", bad"," was bad"]    },
+    {
+        "id": "4",
+        "name": "12 Kingdoms",
+        "good_reviews": ["very good 3",", good"," was nice"],
+        "bad_reviews":  ["very bad",", bad"," was bad"]
+    }
+]
