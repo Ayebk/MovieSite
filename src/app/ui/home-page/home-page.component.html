@@ -73,41 +73,16 @@
                   <!--First slide-->
                   <div class="carousel-item active">
               
-                    <div class="col-md-3" style="float:left">
-                     <div class="card mb-2">
-                       <a href="#">
-                        <img class="card-img-top" 
-                          src="./assets/images/latest/1.jpg" >
-                       </a>
-                      </div>
-                    </div>
-              
-                    <div class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
                         <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/latest/2.jpg" >
-                         </a>
-                      </div>
+                         <img class="card-img-top" 
+                       src="{{movieDb.image}}">
+                      </a>
                     </div>
-              
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/latest/3.jpg" >
-                         </a>
-                      </div>
                     </div>
-                    
-                     <div class="col-md-3" style="float:left">
-                     <div class="card mb-2">
-                      <a href="#">
-                        <img class="card-img-top" 
-                          src="./assets/images/latest/4.jpg" >
-                       </a>
-                      </div>
-                    </div>
+
+
               
                   </div>
                   <!--/.First slide-->
@@ -115,42 +90,18 @@
                   <!--Second slide-->
                   <div class="carousel-item">
               
-                    <div class="col-md-3" style="float:left">
+
+                    <div *ngFor="let movieDb of moviesDbs.slice(4, 8) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
                         <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/latest/5.jpg" >
-                         </a>
-                      </div>
+                         <img class="card-img-top" 
+                       src="{{movieDb.image}}">
+                      </a>
                     </div>
-              
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/latest/6.jpg" >
-                         </a>
-                      </div>
                     </div>
-              
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/latest/7.jpg" >
-                         </a>
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/latest/8.jpg" >
-                         </a>
-                      </div>
-                    </div>
-              
+
+                
+  
                   </div>
                   <!--/.Second slide-->
               
@@ -194,43 +145,17 @@
                   <!--First slide-->
                   <div class="carousel-item active">
               
-                    <div class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="col-md-3" style="float:left">
                      <div class="card mb-2">
                        <a href="#">
                         <img class="card-img-top" 
-                          src="./assets/images/awesome/1.jpg" >
+                          src="{{movieDb.image}}" >
                        </a>
                       </div>
                     </div>
               
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/awesome/8.jpg" >
-                         </a>
-                      </div>
-                    </div>
-              
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/awesome/2.jpg" >
-                         </a>
-                      </div>
-                    </div>
-                    
-                    
-                     <div class="col-md-3" style="float:left">
-                     <div class="card mb-2">
-                      <a href="#">
-                        <img class="card-img-top" 
-                          src="./assets/images/awesome/3.jpg" >
-                       </a>
-                      </div>
-                    </div>
-                    
+
+                              
               
                   </div>
                   <!--/.First slide-->
@@ -238,41 +163,15 @@
                   <!--Second slide-->
                   <div class="carousel-item">
               
-                    <div class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of moviesDbs.slice(4, 8) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
                         <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/awesome/4.jpg" >
-                         </a>
-                      </div>
-                    </div>
-              
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/awesome/5.jpg" >
-                         </a>
-                      </div>
-                    </div>
-              
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/awesome/6.jpg" >
-                         </a>
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-3" style="float:left">
-                      <div class="card mb-2">
-                        <a href="#">
-                          <img class="card-img-top" 
-                            src="./assets/images/awesome/7.jpg" >
-                         </a>
-                      </div>
-                    </div>
+                         <img class="card-img-top" 
+                           src="{{movieDb.image}}" >
+                        </a>
+                       </div>
+                     </div>
+               
                     
               
                   </div>
@@ -322,109 +221,39 @@
           <!--First slide-->
           <div class="carousel-item active">
       
-            <div class="col-md-3" style="float:left">
+            <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="col-md-3" style="float:left">
              <div class="card mb-2">
                 <img class="card-img-top" 
-                  src="./assets/images/upcoming/1.jpg" alt="Card image cap">
+                  src="{{movieDb.image}}" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">CopOut</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                  <p class="card-text">{{movieDb.description}}</p>
                   <a class="btn btn-primary btn-danger">Show</a>
                 </div>
               </div>
             </div>
       
-            <div class="col-md-3" style="float:left">
-              <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/2.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Sahara</h4>
-                  <p class="card-text">he individual images that make up a film are called frames.</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-md-3" style="float:left">
-              <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/3.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Maladonion</h4>
-                  <p class="card-text">Films are cultural artifacts created by specific cultures. They reflect those cultures, and, in turn.</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
             
-             <div class="col-md-3" style="float:left">
-             <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/4.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Hancock</h4>
-                  <p class="card-text">raditionally, films were recorded onto celluloid film stock through  process and then shown through.</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
-      
+            
           </div>
           <!--/.First slide-->
       
           <!--Second slide-->
           <div class="carousel-item">
       
-            <div class="col-md-3" style="float:left">
+            <div *ngFor="let movieDb of moviesDbs.slice(4, 8) " class="col-md-3" style="float:left">
               <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/5.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Ocean</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-md-3" style="float:left">
-              <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/6.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">The Other Guy</h4>
-                  <p class="card-text">The moving images of a film are created by photographing actual scenes with a camera, .</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-md-3" style="float:left">
-              <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/7.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Pain gain</h4>
-                  <p class="card-text">These images are generally accompanied by sound, and more rarely, other sensoryt.</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-3" style="float:left">
-              <div class="card mb-2">
-                <img class="card-img-top"
-                  src="./assets/images/upcoming/8.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Yeah here we are</h4>
-                  <p class="card-text">Film, also called movie, motion picture or moving picture,  experiences that communistories, .</p>
-                  <a class="btn btn-primary btn-danger">Show</a>
-                </div>
-              </div>
-            </div>
+                 <img class="card-img-top" 
+                   src="{{movieDb.image}}" alt="Card image cap">
+                 <div class="card-body">
+                   <h4 class="card-title">CopOut</h4>
+                   <p class="card-text">{{movieDb.description}}</p>
+                   <a class="btn btn-primary btn-danger">Show</a>
+                 </div>
+               </div>
+             </div>
+       
+           
       
           </div>
           <!--/.Second slide-->

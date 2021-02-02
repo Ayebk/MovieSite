@@ -63,15 +63,19 @@
                         <div class="cellphone-container" id="bright">
                             <div class="movie">
                                 <div class="menu"><i class="material-icons"></i></div>
-                                <div class="movie-img"></div>
+
+                                 <!---here is the image --->
+                                 
+                                <div class="movie-img"  style= "background-image: url({{moviesDbs[0].image}})"   
+                                ></div>
+
                                 <div class="text-movie-cont">
                                     <div class="mr-grid">
                                         <div class="col1">
-                                            <h1>Tenet</h1>
+                                            <h1>{{moviesDbs[0].title}}</h1>
                                             <ul class="movie-gen">
-                                                <li>PG-13 /</li>
-                                                <li>2h 49min /</li>
-                                                <li>Adventure, Drama, Sci-Fi,</li>
+                                                <li>{{moviesDbs[0].director}} /</li>
+                                                <li>{{moviesDbs[0].writer}} /</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -85,18 +89,12 @@
                                     </div>
                                     <div class="mr-grid">
                                         <div class="col1">
-                                            <p class="movie-description">A group of elderly people are giving interviews
-                                                about having lived
-                                                in a climate of crop blight and constant dust reminiscent of The Great
-                                                Depression of the 1930's. The first one seen is an elderly woman stating
-                                                her father was a
-                                                farmer, but did not start out that way. </p>
+                                            <p class="movie-description">{{moviesDbs[0].description}}</p>
                                         </div>
                                     </div>
                                     <div class="mr-grid actors-row">
                                         <div class="col1">
-                                            <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain
-                                            </p>
+
                                         </div>
                                     </div>
                                     <div class="mr-grid action-row">

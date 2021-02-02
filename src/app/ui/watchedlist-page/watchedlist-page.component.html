@@ -6,12 +6,23 @@
 <section  id="main2" style="color: white;">
     <h1 style="margin-left:400px ;margin-top:150px"  >My Watched List</h1>
   
-      <div class="movie_card" id="bright">
+
+
+
+
+  
+
+
+
+
+      <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="movie_card" id="bright">
         
+
+
         <div class="info_section">
           <div class="movie_header">
-            <h1>Tenet</h1>
-            <h4>2020, David Ayer</h4>
+            <h1>{{movieDb.title}}</h1>
+            <h4>{{movieDb.releaseYear}}, {{movieDb.director}}, {{movieDb.writer}}</h4>
             <span class="minutes">117 min</span>
             <p class="type">Action, Crime, Fantasy</p>
           </div>
@@ -34,8 +45,7 @@
           </div>
           <div class="movie_social">
             <ul>
-              <li><i class="material-icons">Rating:</i></li>
-              <li><i class="material-icons">5/5</i></li>
+            
               <li><i class="material-icons">My Rating:</i></li>
           
               <li>
@@ -52,7 +62,7 @@
             </ul>
           </div>
         </div>
-        <div class="blur_back bright_back"></div>
+        <div class="blur_back bright_back" style=" background: url({{movieDb.image}})"> </div>
   
       </div>
   
@@ -61,111 +71,6 @@
   
   
   
-  
-  
-  
-  
-      <div class="movie_card" id="bright">
-        
-        <div class="info_section">
-          <div class="movie_header">
-            <h1>Spider Man</h1>
-            <h4>1942, Avi Nir</h4>
-            <span class="minutes">20 min</span>
-            <p class="type">Drama, Romance, Fantasy</p>
-          </div>
-          <div class="movie_desc">
-  
-  
-            <form>
-            <div class="form-group">
-              <label style="margin-right: 200px;" for="exampleFormControlTextarea1">My Review</label>
-              <button style="height: 40px;width: 70px;opacity: 0.8;" type="button" class="btn btn-outline-warning">Update</button>
-  
-              <textarea  style="background-color: black; color: red; " class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  
-            </div>
-          </form>
-  
-          </div>
-          <div class="movie_social">
-            <ul>
-              <li><i class="material-icons">Rating:</i></li>
-              <li><i class="material-icons">5/5</i></li>
-              <li><i class="material-icons">My Rating:</i></li>
-          
-              <li>
-  
-                <div class="Myrating"> <input type="radio" name="rat1ing" value="5" id="5"><label for="5">☆</label> <input type="radio" name="ra1ting" value="4" id="4">
-                  <label for="4">☆</label> <input type="radio" name="rat1ing" value="3" id="3"><label for="3">☆</label> <input type="radio" name="ra1ting" value="2" id="2">
-                  <label for="2">☆</label> <input type="radio" name="rat1ing" value="1" id="1"><label for="1">☆</label>
-                </div>
-  
-              </li>
-  
-  
-  
-            </ul>
-          </div>
-        </div>
-        <div class="blur_back bright_RED"></div>
-      </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      <div class="movie_card" id="bright">
-        
-        <div class="info_section">
-          <div class="movie_header">
-            <h1>Joker</h1>
-            <h4>2019, John Hoe</h4>
-            <span class="minutes">65 min</span>
-            <p class="type">Action, Crime</p>
-          </div>
-          <div class="movie_desc">
-  
-  
-            <form>
-            <div class="form-group">
-              <label style="margin-right: 200px;" for="exampleFormControlTextarea1">My Review</label>
-              <button style="height: 40px;width: 70px;opacity: 0.8;" type="button" class="btn btn-outline-warning">Update</button>
-  
-              <textarea  style="background-color: black; color: red; " class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  
-            </div>
-          </form>
-  
-          </div>
-          <div class="movie_social">
-            <ul>
-              <li><i class="material-icons">Rating:</i></li>
-              <li><i class="material-icons">5/5</i></li>
-              <li><i class="material-icons">My Rating:</i></li>
-          
-              <li>
-  
-                <div class="Myrating"> <input type="radio" name="rat1ing" value="5" id="5"><label for="5">☆</label> <input type="radio" name="ra1ting" value="4" id="4">
-                  <label for="4">☆</label> <input type="radio" name="rat1ing" value="3" id="3"><label for="3">☆</label> <input type="radio" name="ra1ting" value="2" id="2">
-                  <label for="2">☆</label> <input type="radio" name="rat1ing" value="1" id="1"><label for="1">☆</label>
-                </div>
-  
-              </li>
-  
-  
-  
-            </ul>
-          </div>
-        </div>
-        <div class="blur_back tomb_back"></div>
-      </div>
   
   
       
