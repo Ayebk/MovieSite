@@ -12,17 +12,18 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               
               <div class="carousel-inner">
+
+                <!---
+                <div *ngFor="let movieDb of moviesDbs">
+                  <img src = {{movieDb.image}} />
+                </div>
+              -->
+              <!---->
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src=".\assets\images\SHOWCASE\22.png" alt="First slide">
+                  <img class="d-block w-100" src="{{moviesDbs[0].image}}">
                 </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./assets/images/SHOWCASE/1.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./assets/images/SHOWCASE/3.jpg" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./assets/images/SHOWCASE/4.jpg" alt="Third slide">
+                <div *ngFor="let movieDb of moviesDbs | slice:1" class="carousel-item">
+                  <img class="d-block w-100" src="{{movieDb.image}}">
                 </div>
               </div>
               <a class="carousel-control-prev btn-outline-danger"  href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -33,6 +34,7 @@
                 <span class="carousel-control-next-icon " aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
+              
             </div>
               
               </section>
@@ -474,5 +476,12 @@
           </tr>
           
           </table>
+ 
+          
+          <!--
+          <div *ngFor="let movieDb of moviesDbs">
+            <img src = {{movieDb.image}} />
+          </div>
+          --->
       
         

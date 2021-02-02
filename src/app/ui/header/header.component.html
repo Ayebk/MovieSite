@@ -153,7 +153,7 @@
 
 
 
-
+ 
 
 
     <!---search--->
@@ -170,6 +170,13 @@
     </div>
 
     <!----log----->
+    <form>
+        <div class="search"> 
+        <input #username type="text" placeholder="username" id="username" name="username">
+        <input #password type="password" placeholder="password" id="password" name="password">
+         </div>
+    </form>
+    <button id="loginbutton" aria-expanded="false" type="button" class="btn btn-dark" (click)="logIn($event,username.value,password.value)">login</button>
     <a class="nav-link dropdown-toggle"  id="log" role="button" data-toggle="dropdown" aria-haspopup="true"  type="button">
         User Profile
     </a>

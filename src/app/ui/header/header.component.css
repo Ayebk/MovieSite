@@ -62,6 +62,30 @@ nav{
     transition: all ease 1s;
   }
   
+  nav #loginbutton  {
+    background-color: rgba(5, 5, 5, 0.377);
+    border-color: #0808086e;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 43px;
+    font-style: inherit;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#ffffff;
+    letter-spacing: 1px;
+  }
+  
+  nav #loginbutton:hover {
+    background-color: #000000;
+    color:#fc0000;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 1s;
+  }
+
   #droped:hover{
    
     background-color: #3ee70a4f;
@@ -113,6 +137,8 @@ nav{
     opacity: 1; /* Firefox */
   }
   
+  
+
   .search{
     display: flex;
     justify-content: center;
