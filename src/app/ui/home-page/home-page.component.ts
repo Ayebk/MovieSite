@@ -17,10 +17,21 @@ export class HomePageComponent implements OnInit {
 
   public moviesDbs:Array<MovieDb>;
 
+  public actionMovies:Array<MovieDb>;
+
+  public comedyMovies:Array<MovieDb>;
+
+  
+
   get movies(): Array<Movie> {
     return this.data.getMovies();
   }
-  constructor(private data: DataService,private HttpClient: HttpClient) { this.moviesDbs = [];}
+  constructor(private data: DataService,private HttpClient: HttpClient) { 
+    this.moviesDbs = [];
+    this.actionMovies = [];
+    this.comedyMovies = [];
+    
+  }
 
 
 
@@ -29,6 +40,30 @@ export class HomePageComponent implements OnInit {
     this.GetAllMovies().subscribe({
       next:(result:Array<MovieDb>) => {
         this.moviesDbs = result;
+      },
+      error:(err:any)=>{
+        console.log(err);
+      },
+      complete:() =>{
+        console.log(this.moviesDbs);
+      }
+    })
+
+    this.GetAllAction().subscribe({
+      next:(result:Array<MovieDb>) => {
+        this.actionMovies = result;
+      },
+      error:(err:any)=>{
+        console.log(err);
+      },
+      complete:() =>{
+        console.log(this.moviesDbs);
+      }
+    })
+
+    this.GetAllComedy().subscribe({
+      next:(result:Array<MovieDb>) => {
+        this.comedyMovies = result;
       },
       error:(err:any)=>{
         console.log(err);
@@ -53,7 +88,23 @@ export class HomePageComponent implements OnInit {
 
 
   GetAllMovies() : Observable<Array<MovieDb>>{
-    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/getAllMovies',{
+    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/All',{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    });
+  }
+
+  GetAllAction() : Observable<Array<MovieDb>>{
+    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/AllAction',{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    });
+  }
+
+  GetAllComedy() : Observable<Array<MovieDb>>{
+    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/AllComedy',{
       headers:{
         'Content-Type':'application/json'
       }

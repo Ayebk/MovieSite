@@ -170,22 +170,28 @@
     </div>
 
     <!----log----->
+    
+    <ng-container *ngIf="!userLoggedIn">
     <form>
-        <div class="search"> 
-        <input #username type="text" placeholder="username" id="username" name="username">
-        <input #password type="password" placeholder="password" id="password" name="password">
+        <div   class="search"> 
+        <input  #username type="text" placeholder="username" id="username" name="username">
+        <input  #password type="password" placeholder="password" id="password" name="password">
          </div>
     </form>
-    <button id="loginbutton" aria-expanded="false" type="button" class="btn btn-dark" (click)="logIn($event,username.value,password.value)">login</button>
+    <button  id="loginbutton" aria-expanded="false" type="button" class="btn btn-dark" (click)="logIn($event,username.value,password.value)">login</button>
+    </ng-container>
+    
+    <ng-container *ngIf="userLoggedIn">
     <a class="nav-link dropdown-toggle"  id="log" role="button" data-toggle="dropdown" aria-haspopup="true"  type="button">
-        User Profile
+        {{username}}
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a id="droped" class="dropdown-item" >Profile Account</a>
         <a id="droped" class="dropdown-item"  routerLink="/watchedliste" routerLinkActive="active">My watched list</a>
         <div class="dropdown-divider"></div>
-        <a id="logout" class="dropdown-item" >Log Out</a>
+        <a id="logout" class="dropdown-item" (click)="logOut($event)">Log Out</a>
     </div>
+</ng-container>
     
 
 

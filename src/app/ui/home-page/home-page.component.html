@@ -7,7 +7,7 @@
 
 
 
-            <h1>Premiere Movies</h1>
+            <h1>New Releases</h1>
       
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               
@@ -47,14 +47,14 @@
       
       
       
-              <!-- lastest movies -->
+              <!-- Action movies -->
       
       
-              <section id="lastest">
+              <section id="actionmovies">
                 <div id="multi-item-example00" class="carousel slide carousel-multi-item" data-ride="carousel">
       
        
-                  <h1>Lastest Movies</h1>
+                  <h1>Action movies</h1>
       
                   <!--Controls-->
                   <div class="controls-top">
@@ -73,10 +73,10 @@
                   <!--First slide-->
                   <div class="carousel-item active">
               
-                    <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of actionMovies.slice(0, 4)" class="col-md-3" style="float:left">
                       <div class="card mb-2">
                         <a href="#">
-                         <img class="card-img-top" 
+                         <img class="card-img-top" width="341.33" height="192"
                        src="{{movieDb.image}}">
                       </a>
                     </div>
@@ -91,10 +91,10 @@
                   <div class="carousel-item">
               
 
-                    <div *ngFor="let movieDb of moviesDbs.slice(4, 8) " class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of actionMovies.slice(4, 8) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
                         <a href="#">
-                         <img class="card-img-top" 
+                          <img class="card-img-top" width="341.33" height="192"
                        src="{{movieDb.image}}">
                       </a>
                     </div>
@@ -118,14 +118,14 @@
       
       
       
-              <!-- awesome movies -->
+              <!-- comedy movies -->
       
       
-              <section id="Awesome">
+              <section id="comedy">
                
                 <div id="multi-item-example000" class="carousel slide carousel-multi-item" data-ride="carousel">
       
-                  <h1>Awesome Movies</h1>
+                  <h1>Comedy Movies</h1>
       
       
                   <!--Controls-->
@@ -145,10 +145,10 @@
                   <!--First slide-->
                   <div class="carousel-item active">
               
-                    <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of comedyMovies.slice(0, 4) " class="col-md-3" style="float:left">
                      <div class="card mb-2">
                        <a href="#">
-                        <img class="card-img-top" 
+                        <img class="card-img-top" width="341.33" height="192"
                           src="{{movieDb.image}}" >
                        </a>
                       </div>
@@ -163,10 +163,10 @@
                   <!--Second slide-->
                   <div class="carousel-item">
               
-                    <div *ngFor="let movieDb of moviesDbs.slice(4, 8) " class="col-md-3" style="float:left">
+                    <div *ngFor="let movieDb of comedyMovies.slice(4, 8) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
                         <a href="#">
-                         <img class="card-img-top" 
+                          <img class="card-img-top" width="341.33" height="192"
                            src="{{movieDb.image}}" >
                         </a>
                        </div>
@@ -280,33 +280,6 @@
         </div><div class="col-lg-12 col-md-12 col-xs-12 footer_main">
         <div class="col-xs-5 col-md-3 footer-left">
           </div></div>
-
-
-
-          <table border="1" style="color: aliceblue;">
-
-            <tr>
-                <td>
-                  ID
-                </td>
-                <td>
-                  Name
-                </td>
-            
-            </tr>
-            <tr *ngFor='let movie of movies'>
-              <td>
-                {{movie.id}}
-              </td>
-              <td>
-                {{movie.name}}
-              </td>
-            
-          </tr>
-          
-          </table>
- 
-          
           <!--
           <div *ngFor="let movieDb of moviesDbs">
             <img src = {{movieDb.image}} />

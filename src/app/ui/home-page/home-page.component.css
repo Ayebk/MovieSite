@@ -67,14 +67,14 @@
     
     
     
-    /** -----lastest movies   ========--------------*/
+    /** -----actionmovies movies   ========--------------*/
     
-    #lastest {
+    #actionmovies {
     margin-top: 130px;
     
     }
     
-    #lastest h1{
+    #actionmovies h1{
     
       margin-left: 20px;
       color: rgb(219, 4, 4);
@@ -90,16 +90,16 @@
     
     
     
-    /** -----Awesome ==== movies ====--------------*/
+    /** -----comedy ==== movies ====--------------*/
     
     
-    #Awesome {
+    #comedy {
       margin-top: 130px;
     
     }
     
     
-    #Awesome h1{
+    #comedy h1{
       margin-left: 20px;
     
       color: rgb(219, 4, 4);
