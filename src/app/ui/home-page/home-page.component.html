@@ -20,10 +20,10 @@
               -->
               <!---->
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="{{moviesDbs[0].image}}">
+                  <img class="d-block w-100" src="{{moviesDbs[0].image}}" (click)="movieClicked($event,moviesDbs[0])">
                 </div>
                 <div *ngFor="let movieDb of moviesDbs | slice:1" class="carousel-item">
-                  <img class="d-block w-100" src="{{movieDb.image}}">
+                  <img class="d-block w-100" src="{{movieDb.image}}" (click)="movieClicked($event,movieDb)">
                 </div>
               </div>
               <a class="carousel-control-prev btn-outline-danger"  href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -75,9 +75,9 @@
               
                     <div *ngFor="let movieDb of actionMovies.slice(0, 4)" class="col-md-3" style="float:left">
                       <div class="card mb-2">
-                        <a href="#">
+                        <a>
                          <img class="card-img-top" width="341.33" height="192"
-                       src="{{movieDb.image}}">
+                       src="{{movieDb.image}}"  (click)="movieClicked($event,movieDb)">
                       </a>
                     </div>
                     </div>
@@ -93,9 +93,9 @@
 
                     <div *ngFor="let movieDb of actionMovies.slice(4, 8) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
-                        <a href="#">
+                        <a>
                           <img class="card-img-top" width="341.33" height="192"
-                       src="{{movieDb.image}}">
+                       src="{{movieDb.image}}" (click)="movieClicked($event,movieDb)">
                       </a>
                     </div>
                     </div>
@@ -147,9 +147,9 @@
               
                     <div *ngFor="let movieDb of comedyMovies.slice(0, 4) " class="col-md-3" style="float:left">
                      <div class="card mb-2">
-                       <a href="#">
+                       <a>
                         <img class="card-img-top" width="341.33" height="192"
-                          src="{{movieDb.image}}" >
+                          src="{{movieDb.image}}" (click)="movieClicked($event,movieDb)">
                        </a>
                       </div>
                     </div>
@@ -165,9 +165,9 @@
               
                     <div *ngFor="let movieDb of comedyMovies.slice(4, 8) " class="col-md-3" style="float:left">
                       <div class="card mb-2">
-                        <a href="#">
+                        <a>
                           <img class="card-img-top" width="341.33" height="192"
-                           src="{{movieDb.image}}" >
+                           src="{{movieDb.image}}" (click)="movieClicked($event,movieDb)">
                         </a>
                        </div>
                      </div>

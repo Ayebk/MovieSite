@@ -468,15 +468,6 @@ h5 {
 
 
 
-@media only screen and (max-width: 600px) {
-  .rating h1 {
-      font-size: 14px
-  }
-
-  .rating p {
-      font-size: 12px
-  }
-}
 
 
 
@@ -715,3 +706,53 @@ h5 {
 }
 
 
+@media only screen and (max-width: 600px) {
+  .rating h1 {
+      font-size: 14px
+  }
+
+  .rating p {
+      font-size: 12px
+  }
+
+  .container{
+    display: block;
+  }
+
+  .row{
+    display: block;
+    background: #ff0000;
+  }
+
+  .movie_card{
+    display: block;
+  }
+
+  #coll11{
+    display: block;
+    background: #ff0000;
+  }
+
+  #coll22{
+    display: block;
+    background: #ff0000;
+  }
+
+  .coll33{
+    display: block !important;
+    background: #ff0000;
+  }
+
+  .movie_container{
+    display:block;
+  }
+
+  .cellphone-container{
+    display: block;
+  }
+
+  .movie{
+    display: block;
+  }
+
+}

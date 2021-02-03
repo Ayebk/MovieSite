@@ -4,6 +4,7 @@ import { DataService } from 'src/app/data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MovieDb } from 'src/app/models/MovieDb';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class HomePageComponent implements OnInit {
   get movies(): Array<Movie> {
     return this.data.getMovies();
   }
-  constructor(private data: DataService,private HttpClient: HttpClient) { 
+  constructor(private data: DataService,private HttpClient: HttpClient, private router:Router) { 
     this.moviesDbs = [];
     this.actionMovies = [];
     this.comedyMovies = [];
@@ -86,6 +87,10 @@ export class HomePageComponent implements OnInit {
     */
   }
 
+  movieClicked(operation:MouseEvent, movie:MovieDb){
+    this.data.setSuggestionMovie(movie);
+    this.router.navigate(['/suggetion']);
+  }
 
   GetAllMovies() : Observable<Array<MovieDb>>{
     return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/All',{

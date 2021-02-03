@@ -4,6 +4,7 @@ import { DataService } from 'src/app/data.service';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MovieDb } from 'src/app/models/MovieDb';
+import { Review } from 'src/app/models/Review';
 
 
 @Component({
@@ -20,6 +21,9 @@ export class SuggestionPageComponent implements OnInit {
   
     public moviesDbs:Array<MovieDb>;
     public suggestedMovie:MovieDb;
+    public goodReviews:Array<Review>;
+    public lowReviews:Array<Review>;
+    
 
     get movies(): Array<Movie> {
       return this.data.getMovies();
@@ -40,6 +44,11 @@ export class SuggestionPageComponent implements OnInit {
 
 
        this.moviesDbs = [];
+       
+       this.goodReviews = [];
+
+       this.lowReviews = [];
+
        this}
   
   
@@ -58,7 +67,6 @@ export class SuggestionPageComponent implements OnInit {
         }
       })
       
-      
       /*
       this.GetAllMovies().subscribe({
         next:(result:string) =>{
@@ -71,6 +79,38 @@ export class SuggestionPageComponent implements OnInit {
       */
     }
   
+
+    getReviews(id:number){
+
+      this.GetLowReviews(id).subscribe({
+        next:(result:Array<Review>) => {
+          this.lowReviews = result;
+        },
+        error:(err:any)=>{
+          console.log(err);
+        },
+        complete:() =>{
+          console.log(this.lowReviews);
+        }
+      })
+
+      this.GetGoodReviews(id).subscribe({
+        next:(result:Array<Review>) => {
+          this.goodReviews = result;
+        },
+        error:(err:any)=>{
+          console.log(err);
+        },
+        complete:() =>{
+          console.log(this.goodReviews);
+        }
+      });
+
+
+
+      
+      
+    }
   
     GetAllMovies() : Observable<Array<MovieDb>>{
       return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/getAllMovies',{
@@ -80,6 +120,27 @@ export class SuggestionPageComponent implements OnInit {
       });
     }
   
+    GetGoodReviews(id:number) : Observable<Array<Review>>{
+      return this.HttpClient.post<Array<Review>>('http://localhost:65000/review/GetGoodReviews',{
+        id:id
+      },
+      {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+    });
+    }
+
+    GetLowReviews(id:number) : Observable<Array<Review>>{
+      return this.HttpClient.post<Array<Review>>('http://localhost:65000/review/GetLowReviews',{
+        id:id
+      },
+      {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+    });
+    }
     
   //a function thats called whenever the suggest button is clicked
   SuggestAMovie(){
@@ -96,6 +157,9 @@ export class SuggestionPageComponent implements OnInit {
       },
       error:(err:any)=>{
         console.log(err);
+      },
+      complete:() =>{
+        console.log(this.getReviews(this.suggestedMovie.id));
       }
     })
   }
@@ -112,9 +176,26 @@ export class SuggestionPageComponent implements OnInit {
     })
     }
     
+
+
+    RatingCompare(rating:number, compare:number)
+    {
+      console.log(rating === compare);
+      return(rating === compare);
+    }
+
     ngOnInit(): void {
       this.getMovies();
+      if(this.data.getSuggestedMovie().id === 0)
+      {
       this.SuggestAMovie();
+      }
+      else
+      {
+        this.suggestedMovie = this.data.getSuggestedMovie();
+        this.getReviews(this.suggestedMovie.id);
+      }
+      
     }
   
   }

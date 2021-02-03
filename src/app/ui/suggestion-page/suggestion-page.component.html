@@ -3,7 +3,7 @@
 
 <section id="main2" style="color: rgb(255, 255, 255);margin-top:150px">
 
-    <div class="row">
+    <div id="movie_container" class="movie_container">
         <div class="col11">
 
 
@@ -11,31 +11,15 @@
 
                 <h2 style="margin-left:100px">Low Reviews </h2>
 
+                <ng-container *ngFor="let review of lowReviews">
                 <div class="form-group " style="margin-bottom: 60px">
-                    <label for="exampleFormControlTextarea1">Name:</label>
+                    <label for="exampleFormControlTextarea1">Name:{{review.username}}</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3"></textarea>
-                    <label for="exampleFormControlTextarea1">Rating:</label>
+                        rows="3">Name:{{review.content}}</textarea>
+                    <label for="exampleFormControlTextarea1">Rating:Name:{{review.rating}}</label>
 
                 </div>
-
-                <div class="form-group" style="margin-bottom: 60px;">
-                    <label for="exampleFormControlTextarea1">Name:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3"></textarea>
-                    <label for="exampleFormControlTextarea1">Rating:</label>
-
-                </div>
-
-                <div class="form-group" style="margin-bottom: 100px">
-                    <label for="exampleFormControlTextarea1">Name:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3"></textarea>
-                    <label for="exampleFormControlTextarea1">Rating:</label>
-
-                </div>
-
-
+            </ng-container>
             </form>
 
 
@@ -66,7 +50,7 @@
 
                                  <!---here is the image --->
                                  
-                                <div class="movie-img"  style= "background-image: url({{suggestedMovie.image}})"   
+                                <div class="movie-img"  style= "background-image: url({{suggestedMovie.image}})"
                                 ></div>
 
                                 <div class="text-movie-cont">
@@ -103,15 +87,16 @@
 
                                                 <h3>Rating:</h3>
 
-                                                <div class="rating"> <input type="radio" name="rating" value="5"
+                                                <div class="rating"> <input type="radio" name="rating" value="5" [checked]="RatingCompare(suggestedMovie.stars,5)"
                                                         id="5"><label for="5">☆</label> <input type="radio"
-                                                        name="rating" value="4" id="4">
+                                                        name="rating" value="4" id="4" [checked]="RatingCompare(suggestedMovie.stars,4)">
                                                     <label for="4">☆</label> <input type="radio" name="rating" value="3"
-                                                        id="3"><label for="3">☆</label> <input type="radio"
-                                                        name="rating" value="2" id="2">
+                                                        id="3" [checked]="RatingCompare(suggestedMovie.stars,3)" ><label for="3">☆</label> <input type="radio"
+                                                        name="rating" value="2" id="2" [checked]="RatingCompare(suggestedMovie.stars,2)">
                                                     <label for="2">☆</label> <input type="radio" name="rating" value="1"
-                                                        id="1"><label for="1">☆</label>
+                                                        id="1" [checked]="RatingCompare(suggestedMovie.stars,1)" ><label for="1">☆</label>
                                                 </div>
+                                       
 
 
                                             </div>
@@ -178,29 +163,15 @@
             <form style="margin-left: 80px;">
 
 
-                <div class="form-group " style="margin-bottom: 60px; ">
-                    <label for="exampleFormControlTextarea1">Name:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        style="width: 400px;"></textarea>
-                    <label for="exampleFormControlTextarea1">Rating:</label>
-
-                </div>
-
-                <div class="form-group" style="margin-bottom: 60px;">
-                    <label for="exampleFormControlTextarea1">Name:</label>
+                <ng-container *ngFor="let review of goodReviews">
+                <div  class="form-group " style="margin-bottom: 60px">
+                    <label for="exampleFormControlTextarea1">{{review.username}}</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3"></textarea>
-                    <label for="exampleFormControlTextarea1">Rating:</label>
+                        rows="3">{{review.content}}</textarea>
+                    <label for="exampleFormControlTextarea1">{{review.rating}}</label>
 
                 </div>
-
-                <div class="form-group" style="margin-bottom: 100px">
-                    <label for="exampleFormControlTextarea1">Name:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3"></textarea>
-                    <label for="exampleFormControlTextarea1">Rating:</label>
-
-                </div>
+            </ng-container>
 
 
             </form>
