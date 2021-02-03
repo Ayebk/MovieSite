@@ -102,12 +102,20 @@
     #comedy h1{
       margin-left: 20px;
     
-      color: rgb(219, 4, 4);
+      color: rgb(211, 0, 0);
       text-shadow: 1px 1px 30px currentColor;
     
       margin-top: 60px;
     }
     
+    #title{
+      margin-left: 20px;
+    
+      color: rgb(211, 0, 0);
+      text-shadow: 1px 1px 30px currentColor;
+    
+      margin-top: 60px;
+    }
     
     
     
@@ -150,6 +158,25 @@
       color: rgb(255, 255, 255);
       background-color: rgba(255, 0, 0, 0.068);
     }
+
+    #nexts {
+        
+      margin-left: 500px ;
+      
+    }
     
-    
-    
+    @media screen and (max-width: 770px) {
+   
+
+      .carouselExampleIndicators{
+        widows: 100%;
+      }
+
+
+      #nexts {
+        
+        display: block;
+        
+      }
+  
+    }

@@ -181,6 +181,10 @@
     background-size: cover;
     border-radius: 11px;
   }
+  #titletop{
+    margin-left:400px ;
+    margin-top:150px;
+  }
   
   @media screen and (min-width: 768px) {
     .movie_header {
@@ -200,8 +204,23 @@
       width: 80%;
       background-position: -100% 10% !important;
     }
+  
+    
+    
   }
+  #titletop{
+  margin-left:400px ;
+  margin-top:150px;
+}
+
   @media screen and (max-width: 768px) {
+    #titletop{
+      margin-top: 300px;
+      margin-left:200px ;
+    }
+    #image{
+      opacity:0.1;
+    }
     .movie_card {
       width: 95%;
       margin: 70px auto;
