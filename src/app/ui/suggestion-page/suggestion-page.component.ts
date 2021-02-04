@@ -23,7 +23,7 @@ export class SuggestionPageComponent implements OnInit {
   public suggestedMovie: MovieDb;
   public goodReviews: Array<Review>;
   public lowReviews: Array<Review>;
-
+  public displayAddButton: boolean;
 
   get movies(): Array<Movie> {
     return this.data.getMovies();
@@ -50,7 +50,7 @@ export class SuggestionPageComponent implements OnInit {
 
     this.lowReviews = [];
 
-    this
+    this.displayAddButton = true;
   }
 
 
@@ -71,21 +71,21 @@ export class SuggestionPageComponent implements OnInit {
   }
 
 
-  addMovieClicked(operation:MouseEvent){
+  addMovieClicked(operation: MouseEvent) {
     let userId = Number(localStorage.getItem('userId'));
-    if(isNaN(userId)){
+    if (isNaN(userId)) {
       alert("you aren't logged in");
     }
-    else
-    {
+    else {
       this.addMovieToWatchList(this.suggestedMovie.id, userId).subscribe({
-        next:(result:string) => {
+        next: (result: string) => {
           alert("added to your watched list");
+          this.displayAddButton = false;
         },
-        error:(err:any) => {
+        error: (err: any) => {
           console.log(err);
         },
-        complete:() =>{
+        complete: () => {
         }
       })
     }
@@ -159,6 +159,7 @@ export class SuggestionPageComponent implements OnInit {
     let userId = Number(localStorage.getItem('userId'));
     if (isNaN(userId)) {
       userId = 0;
+
     }
     this.SuggestMoviePost(userId).subscribe({
       next: (result: Array<MovieDb>) => {
@@ -187,12 +188,10 @@ export class SuggestionPageComponent implements OnInit {
       })
   }
 
-
-
-  addMovieToWatchList(movieid:number, userid:number): Observable<string> {
+  addMovieToWatchList(movieid: number, userid: number): Observable<string> {
     return this.HttpClient.post<string>('http://localhost:65000/watched/addToWatchedList', {
-      movieid:movieid,
-      userid:userid
+      movieid: movieid,
+      userid: userid
     },
       {
         headers: new HttpHeaders({
@@ -202,8 +201,42 @@ export class SuggestionPageComponent implements OnInit {
   }
 
   RatingCompare(rating: number, compare: number) {
-    console.log(rating === compare);
     return (rating === compare);
+  }
+
+  checkIfUserHasWatchedTheMovie(userid: number) {
+    console.log(this.suggestedMovie.id, userid);
+    this.checkIfUserHasWatchedTheMovieHttpCall(this.suggestedMovie.id, userid).subscribe({
+      next: (result: string) => {
+        console.log(result);
+        if (result === "true") {
+          this.displayAddButton = false;
+        }
+        else {
+          this.displayAddButton = true;
+        }
+      },
+      error: (err: any) => {
+        console.log(err);
+      },
+      complete: () => {
+        console.log(this.lowReviews);
+      }
+    })
+
+
+  }
+
+  checkIfUserHasWatchedTheMovieHttpCall(movieid: number,userid: number): Observable<string> {
+    return this.HttpClient.post<string>('http://localhost:65000/watched/checkIfUserWatched', {
+      movieid: movieid,
+      userid: userid
+    },
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
   }
 
   ngOnInit(): void {
@@ -216,6 +249,13 @@ export class SuggestionPageComponent implements OnInit {
       this.getReviews(this.suggestedMovie.id);
     }
 
+    let userId = Number(localStorage.getItem('userId'));
+    if (isNaN(userId)) {
+      this.displayAddButton = true;
+    }
+    else {
+      this.checkIfUserHasWatchedTheMovie(userId);
+    }
   }
 
 }

@@ -111,6 +111,7 @@ Name:{{ review.content }}</textarea
                     </div>
                   </div>
                 </div>
+                <ng-container *ngIf="displayAddButton">
                 <div class="col6 action-btn"  (click)="addMovieClicked($event)">
                   <svg
                     id="svg1"
@@ -131,7 +132,7 @@ Name:{{ review.content }}</textarea
                     />
                   </svg>
                 </div>
-
+              </ng-container>
                 <div class="col6 action-btn">
                   <svg
                     id="svg2"
