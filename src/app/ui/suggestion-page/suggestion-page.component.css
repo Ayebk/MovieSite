@@ -691,12 +691,11 @@ h5 {
  
 }
 .col22 {
-  margin-left: 10px;
+  margin-left: 0px;
   margin-top:200px ;
   float: left;
   order:-1;
   padding: 10px;
-
 }
 .col33 {
   text-align: left;
