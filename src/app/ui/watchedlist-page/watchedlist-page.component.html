@@ -21,10 +21,9 @@
 
         <div class="info_section">
           <div class="movie_header">
-            <h1>{{movieDb.title}}</h1>
+            <h2>{{movieDb.title}}</h2>
             <h4>{{movieDb.releaseYear}}, {{movieDb.director}}, {{movieDb.writer}}</h4>
-            <span class="minutes">117 min</span>
-            <p class="type">Action, Crime, Fantasy</p>
+            <p class="type">{{movieDb.genre}}</p>
           </div>
           <div class="movie_desc">
   
@@ -35,7 +34,7 @@
               <label style="margin-right: 200px;" for="exampleFormControlTextarea1">My Review</label>
               <button style="height: 40px;width: 70px;opacity: 0.8;" type="button" class="btn btn-outline-warning">Update</button>
   
-              <textarea  style="background-color: black; color: red; " class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea  style="background-color: black; color: red; " class="form-control" id="exampleFormControlTextarea1" rows="3">{{movieDb.content}}</textarea>
   
             </div>
           </form>
