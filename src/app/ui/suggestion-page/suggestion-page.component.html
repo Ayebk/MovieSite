@@ -1,187 +1,185 @@
 <!--REVIEWS-->
 
+<div class="col11">
+  <form style="margin-left: 50px">
+    <h2 style="margin-left: 100px">Low Reviews</h2>
 
+    <ng-container *ngFor="let review of lowReviews">
+      <div class="form-group" style="margin-bottom: 60px">
+        <label for="exampleFormControlTextarea1"
+          >Name:{{ review.username }}</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          style="width: 400px"
+          rows="3"
+        >
+Name:{{ review.content }}</textarea
+        >
+        <label for="exampleFormControlTextarea1"
+          >Rating:Name:{{ review.rating }}</label
+        >
+      </div>
+    </ng-container>
+  </form>
+</div>
 
+<!--CARD-->
+<div class="col22">
+  <div>
+    <div class="row">
+      <!------>
+      <div class="container">
+        <div class="cellphone-container" id="bright">
+          <div class="movie">
+            <div class="menu"><i class="material-icons"></i></div>
+            <!---here is the image --->
+            <div
+              class="movie-img"
+              style="background-image: url({{ suggestedMovie.image }})"
+            ></div>
+            <div class="text-movie-cont">
+              <div class="mr-grid">
+                <div class="col1">
+                  <h1>{{ suggestedMovie.title }}</h1>
+                  <ul class="movie-gen">
+                    <li>{{ suggestedMovie.director }} /</li>
+                    <li>{{ suggestedMovie.writer }} /</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mr-grid summary-row">
+                <div class="col2">
+                  <h4>SUMMARY</h4>
+                </div>
+                <div class="col2"></div>
+              </div>
+              <div class="mr-grid">
+                <div class="col1">
+                  <p class="movie-description">
+                    {{ suggestedMovie.description }}
+                  </p>
+                </div>
+              </div>
+              <div class="mr-grid actors-row">
+                <div class="col1"></div>
+              </div>
+              <div class="mr-grid action-row">
+                <div class="col2" style="margin-right: 130px">
+                  <div class="watch-btn">
+                    <h3>Rating:</h3>
 
-        <!--CARD-->
-
-
-        <div class="col22">
-
-
-
-            <div>
-                <div class="row">
-
-
-                    <!------>
-                    <div class="container">
-                        <div class="cellphone-container" id="bright">
-                            <div class="movie">
-                                <div class="menu"><i class="material-icons"></i></div>
-
-                                 <!---here is the image --->
-                                 
-                                <div class="movie-img"  style= "background-image: url({{suggestedMovie.image}})"
-                                ></div>
-
-                                <div class="text-movie-cont">
-                                    <div class="mr-grid">
-                                        <div class="col1">
-                                            <h1>{{suggestedMovie.title}}</h1>
-                                            <ul class="movie-gen">
-                                                <li>{{suggestedMovie.director}} /</li>
-                                                <li>{{suggestedMovie.writer}} /</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mr-grid summary-row">
-                                        <div class="col2">
-                                            <h4>SUMMARY</h4>
-                                        </div>
-                                        <div class="col2">
-
-                                        </div>
-                                    </div>
-                                    <div class="mr-grid">
-                                        <div class="col1">
-                                            <p class="movie-description">{{suggestedMovie.description}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="mr-grid actors-row">
-                                        <div class="col1">
-
-                                        </div>
-                                    </div>
-                                    <div class="mr-grid action-row">
-                                        <div class="col2" >
-                                            <div class="watch-btn">
-
-                                                <h3>Rating:</h3>
-
-                                                <div class="rating"> <input type="radio" name="rating" value="5" [checked]="RatingCompare(suggestedMovie.stars,5)"
-                                                        id="5"><label for="5">☆</label> <input type="radio"
-                                                        name="rating" value="4" id="4" [checked]="RatingCompare(suggestedMovie.stars,4)">
-                                                    <label for="4">☆</label> <input type="radio" name="rating" value="3"
-                                                        id="3" [checked]="RatingCompare(suggestedMovie.stars,3)" ><label for="3">☆</label> <input type="radio"
-                                                        name="rating" value="2" id="2" [checked]="RatingCompare(suggestedMovie.stars,2)">
-                                                    <label for="2">☆</label> <input type="radio" name="rating" value="1"
-                                                        id="1" [checked]="RatingCompare(suggestedMovie.stars,1)" ><label for="1">☆</label>
-                                                </div>
-                                       
-
-
-                                            </div>
-
-                                        </div>
-                                        <div class="col6 action-btn">
-
-                                            <svg id="svg1" width="80px" height="80px" viewBox="0 0 16 16"
-                                                class="bi bi-plus-square" fill="#3dce30c2"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                                            </svg>
-
-                                        </div>
-
-                                        <div class="col6 action-btn">
-
-                                            <svg id="svg2" width="80px" height="80px" viewBox="0 0 16 16"
-                                                class="bi bi-arrow-right-square" fill="#da0b0bc2"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z" />
-                                            </svg>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="rating">
+                      <input
+                        type="radio"
+                        name="rating"
+                        value="5"
+                        [checked]="RatingCompare(suggestedMovie.stars, 5)"
+                        id="5"
+                      /><label for="5">☆</label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        value="4"
+                        id="4"
+                        [checked]="RatingCompare(suggestedMovie.stars, 4)"
+                      />
+                      <label for="4">☆</label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        value="3"
+                        id="3"
+                        [checked]="RatingCompare(suggestedMovie.stars, 3)"
+                      /><label for="3">☆</label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        value="2"
+                        id="2"
+                        [checked]="RatingCompare(suggestedMovie.stars, 2)"
+                      />
+                      <label for="2">☆</label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        value="1"
+                        id="1"
+                        [checked]="RatingCompare(suggestedMovie.stars, 1)"
+                      /><label for="1">☆</label>
                     </div>
-
-
-
-
-
-                    <!---->
-
-
-
+                  </div>
                 </div>
-
+                <ng-container *ngIf="displayAddButton">
+                <div class="col6 action-btn"  (click)="addMovieClicked($event)">
+                  <svg
+                    id="svg1"
+                    width="80px"
+                    height="80px"
+                    viewBox="0 0 16 16"
+                    class="bi bi-plus-square"
+                    fill="#3dce30c2"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                    />
+                  </svg>
+                </div>
+              </ng-container>
+                <div class="col6 action-btn">
+                  <svg
+                    id="svg2"
+                    width="80px"
+                    height="80px"
+                    viewBox="0 0 16 16"
+                    class="bi bi-arrow-right-square"
+                    fill="#da0b0bc2"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
-
-
-
-
-
-
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!--REVIEWS-->
 
+<div class="col33">
+  <h2 style="margin-left: 180px">High Reviews</h2>
 
-
-
-
-
-
-
-        <!--REVIEWS-->
-
-
-        <div class="col33 ">
-            <h2 style="margin-left:180px">High Reviews </h2>
-
-            <form style="margin-left: 80px;">
-
-
-                <ng-container *ngFor="let review of goodReviews">
-                <div  class="form-group " style="margin-bottom: 60px">
-                    <label for="exampleFormControlTextarea1">{{review.username}}</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3">{{review.content}}</textarea>
-                    <label for="exampleFormControlTextarea1">{{review.rating}}</label>
-
-                </div>
-            </ng-container>
-
-
-            </form>
-
-
-
-
-        </div>
-
-
-
-        
-
-        
-        
-        <div class="col11">
-
-
-            <form style="margin-left:50px">
-
-                <h2 style="margin-left:100px">Low Reviews </h2>
-
-                <ng-container *ngFor="let review of lowReviews">
-                <div class="form-group " style="margin-bottom: 60px">
-                    <label for="exampleFormControlTextarea1">Name:{{review.username}}</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3">Name:{{review.content}}</textarea>
-                    <label for="exampleFormControlTextarea1">Rating:Name:{{review.rating}}</label>
-
-                </div>
-            </ng-container>
-            </form>
-
-
-        </div>
+  <form style="margin-left: 80px">
+    <ng-container *ngFor="let review of goodReviews">
+      <div class="form-group" style="margin-bottom: 60px">
+        <label for="exampleFormControlTextarea1">{{ review.username }}</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          style="width: 400px"
+          rows="3"
+          >{{ review.content }}</textarea
+        >
+        <label for="exampleFormControlTextarea1">{{ review.rating }}</label>
+      </div>
+    </ng-container>
+  </form>
+</div>
