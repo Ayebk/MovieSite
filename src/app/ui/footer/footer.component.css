@@ -1,14 +1,18 @@
 
 /*====--FOTTER ---====*/
-
-
-.col-11{
- 
+#foot {
+  display: block;
+  clear: both;
+  position: relative;
+  height: 200px;
 }
+
+
 @media only screen and (max-width: 768px) {
   #foot {
-    position: absolute;
-      bottom: 1;
+    clear: both;
+    position: relative;
+    height: 200px;
   }
     /* For mobile phones: */
     .footer_main {

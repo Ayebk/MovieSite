@@ -353,20 +353,22 @@ h5 {
   }
 
 .col11 {
+  
     float: left;
-    width: 30%;
+    width: 23%;
     padding: 10px;
 
 }
 .col22 {
+  margin-left:150px ;
     float: left;
-    width: 38%;
+    width: 40%;
     padding: 10px;
 
 }
 .col33 {
     float: left;
-    width: 30%;
+    width: 23%;
     padding: 10px;
 
 }
@@ -670,7 +672,6 @@ h5 {
 .col11 ,.col22,.col33 {
   margin-top: 150px;
   flex: 1; /*grow*/
-  border: 1px solid;
 }
 
 
@@ -683,25 +684,26 @@ h5 {
  
 .col11 {
   margin-top:200px;
-  order:3;
+  text-align: left;
   float: left;
   width: 100%;
   padding: 10px;
-
+ 
 }
 .col22 {
-  margin-top:150px ;
+  margin-left: 10px;
+  margin-top:200px ;
   float: left;
-  order:1;
+  order:-1;
   padding: 10px;
 
 }
 .col33 {
+  text-align: left;
+  margin-left: -35px;
+
   float: left;
-  order:2;
   width: 100%;
-
-
   padding: 10px;
 
 }

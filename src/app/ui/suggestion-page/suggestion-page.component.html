@@ -2,32 +2,6 @@
 
 
 
-        <div class="col11">
-
-
-            <form style="margin-left:50px">
-
-                <h2 style="margin-left:100px">Low Reviews </h2>
-
-                <ng-container *ngFor="let review of lowReviews">
-                <div class="form-group " style="margin-bottom: 60px">
-                    <label for="exampleFormControlTextarea1">Name:{{review.username}}</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
-                        rows="3">Name:{{review.content}}</textarea>
-                    <label for="exampleFormControlTextarea1">Rating:Name:{{review.rating}}</label>
-
-                </div>
-            </ng-container>
-            </form>
-
-
-        </div>
-
-
-
-
-
-
 
         <!--CARD-->
 
@@ -80,7 +54,7 @@
                                         </div>
                                     </div>
                                     <div class="mr-grid action-row">
-                                        <div class="col2" style="margin-right: 130px;">
+                                        <div class="col2" >
                                             <div class="watch-btn">
 
                                                 <h3>Rating:</h3>
@@ -152,6 +126,12 @@
 
 
 
+
+
+
+
+
+
         <!--REVIEWS-->
 
 
@@ -179,3 +159,29 @@
 
         </div>
 
+
+
+        
+
+        
+        
+        <div class="col11">
+
+
+            <form style="margin-left:50px">
+
+                <h2 style="margin-left:100px">Low Reviews </h2>
+
+                <ng-container *ngFor="let review of lowReviews">
+                <div class="form-group " style="margin-bottom: 60px">
+                    <label for="exampleFormControlTextarea1">Name:{{review.username}}</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 400px"
+                        rows="3">Name:{{review.content}}</textarea>
+                    <label for="exampleFormControlTextarea1">Rating:Name:{{review.rating}}</label>
+
+                </div>
+            </ng-container>
+            </form>
+
+
+        </div>

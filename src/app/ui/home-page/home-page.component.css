@@ -167,7 +167,11 @@
     
     @media screen and (max-width: 770px) {
    
-
+      #main{
+       
+        width: 60%;
+        
+      }
       .carouselExampleIndicators{
         widows: 100%;
       }

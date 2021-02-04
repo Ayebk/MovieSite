@@ -116,8 +116,7 @@ nav{
     line-height: 43px;
     font-style: inherit;
     padding: 0px 22px;
-    display: flex;
-    font-size: 0.8rem;
+    display: inline-block;
     text-transform: uppercase;
     font-weight: 500;
     color:#f7f7f7;
