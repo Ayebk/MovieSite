@@ -1,42 +1,22 @@
 
-
-
 <div>
 <!--navigation-->
-
 <nav>
     <!---logo--->
     <a  routerLink=""  class="logo">
         <img src="./assets/logo6.png" >
     </a>
-
-
-
-
-
-
-
-
-
-
- 
-
-
     <!---search--->
     <div class="search">
         <input type="text" placeholder="Find your movie" size="60">
         <button aria-expanded="false" type="submit"><i class="fa fa-search "></i></button>
-
     </div>
-
     <!----Suggest----->
     <div>
         <a   routerLink="/suggetion" routerLinkActive="active" style="text-decoration: none ;color: inherit"><button id="suggest" type="button"
                 class="btn btn-dark">Suggest The Best</button></a>
     </div>
-
     <!----log----->
-    
     <ng-container *ngIf="!userLoggedIn">
     <form>
         <div   class="search"> 
@@ -58,23 +38,5 @@
         <a id="logout" class="dropdown-item" (click)="logOut($event)">Log Out</a>
     </div>
 </ng-container>
-    
-
-
- 
-
-
 </nav>
-
-
-<script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "450px";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-    </script>
-
 </div>
