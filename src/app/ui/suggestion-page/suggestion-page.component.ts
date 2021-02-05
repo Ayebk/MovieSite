@@ -116,11 +116,6 @@ export class SuggestionPageComponent implements OnInit {
         console.log(this.goodReviews);
       }
     });
-
-
-
-
-
   }
 
   GetAllMovies(): Observable<Array<MovieDb>> {

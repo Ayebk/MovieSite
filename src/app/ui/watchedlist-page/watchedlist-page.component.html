@@ -1,78 +1,103 @@
 <!--CARDS-->
 
+<section id="main2" style="color: white">
+  <h1 id="titletop">My Watched List</h1>
 
-
-
-<section  id="main2" style="color: white;">
-    <h1 id="titletop"   >My Watched List</h1>
-  
-
-
-
-
-  
-
-
-
-
-      <div *ngFor="let movieDb of moviesDbs" class="movie_card" id="bright">
-        
-
-
-        <div class="info_section">
-          <div class="movie_header">
-            <h2>{{movieDb.title}}</h2>
-            <h4>{{movieDb.releaseYear}}, {{movieDb.director}}, {{movieDb.writer}}</h4>
-            <p class="type">{{movieDb.genre}}</p>
-          </div>
-          <div class="movie_desc">
-  
-  
-            <form >
-            <div class="form-group">
-        
-              <label style="margin-right: 200px;" for="exampleFormControlTextarea1">My Review</label>
-              <button style="height: 40px;width: 70px;opacity: 0.8;" type="button" class="btn btn-outline-warning">Update</button>
-  
-              <textarea  style="background-color: black; color: red; " class="form-control" id="exampleFormControlTextarea1" rows="3">{{movieDb.content}}</textarea>
-  
-            </div>
-          </form>
-  
-  
-  
-          </div>
-          <div class="movie_social">
-            <ul>
-            
-              <li><i class="material-icons">My Rating:</i></li>
-          
-              <li>
-  
-                <div class="Myrating"> <input type="radio" name="rat1ing" value="5" id="5"><label for="5">☆</label> <input type="radio" name="ra1ting" value="4" id="4">
-                  <label for="4">☆</label> <input type="radio" name="rat1ing" value="3" id="3"><label for="3">☆</label> <input type="radio" name="ra1ting" value="2" id="2">
-                  <label for="2">☆</label> <input type="radio" name="rat1ing" value="1" id="1"><label for="1">☆</label>
-                </div>
-  
-              </li>
-  
-  
-  
-            </ul>
-          </div>
-        </div>
-        <div id="image" class="blur_back bright_back" style=" background: url({{movieDb.image}})"> </div>
-  
+  <div *ngFor="let movieDb of moviesDbs" class="movie_card" id="bright">
+    <div class="info_section">
+      <div class="movie_header">
+        <h2>{{ movieDb.title }}</h2>
+        <h4>
+          {{ movieDb.releaseYear }}, {{ movieDb.director }},
+          {{ movieDb.writer }}
+        </h4>
+        <p class="type">{{ movieDb.genre }}</p>
       </div>
-  
-  
-  
-  
-  
-  
-  
-  
-      
-    </section>
-  
-  
+      <div class="movie_desc">
+          <div class="form-group">
+            <label style="margin-right: 200px" for="exampleFormControlTextarea1"
+              >My Review</label
+            >
+            <button
+              id="textarea_{{ movieDb.id }}"
+              style="height: 40px; width: 70px; opacity: 0.8"
+              type="button"
+              class="btn btn-outline-warning"
+              (click)="UpdateReviewClicked($event, movieDb)"
+            >
+              Update
+            </button>
+            <form>
+              <textarea
+                #textarea_review
+                style="background-color: black; color: red"
+                class="form-control"
+                id="textarea_{{ movieDb.id }}"
+                rows="3"
+                (input)="contentChanged(textarea_review.value, movieDb)"
+              >{{movieDb.content}}</textarea>
+            </form>
+          </div>
+      </div>
+      <div class="movie_social">
+        <ul>
+          <li><i class="material-icons">My Rating:</i></li>
+
+          <li>
+            <ng-container>
+              <div class="Myrating">
+                <input
+                  type="radio"
+                  name="{{ movieDb.id }}_5"
+                  value="5"
+                  id="{{ movieDb.id }}_5"
+                  [checked]="RatingCompare(movieDb.rating, 5)"
+                  (click)="ratingClick($event, movieDb, 5)"
+                /><label for="{{ movieDb.id }}_5">☆</label>
+                <input
+                  type="radio"
+                  name="{{ movieDb.id }}_4"
+                  value="4"
+                  id="{{ movieDb.id }}_4"
+                  [checked]="RatingCompare(movieDb.rating, 4)"
+                  (click)="ratingClick($event, movieDb, 4)"
+                />
+                <label for="{{ movieDb.id }}_4">☆</label>
+                <input
+                  type="radio"
+                  name="{{ movieDb.id }}_3"
+                  value="3"
+                  id="{{ movieDb.id }}_3"
+                  [checked]="RatingCompare(movieDb.rating, 3)"
+                  (click)="ratingClick($event, movieDb, 3)"
+                /><label for="{{ movieDb.id }}_3">☆</label>
+                <input
+                  type="radio"
+                  name="{{ movieDb.id }}_2"
+                  value="2"
+                  id="{{ movieDb.id }}_2"
+                  [checked]="RatingCompare(movieDb.rating, 2)"
+                  (click)="ratingClick($event, movieDb, 2)"
+                />
+                <label for="{{ movieDb.id }}_2">☆</label>
+                <input
+                  type="radio"
+                  name="{{ movieDb.id }}_1"
+                  value="1"
+                  id="{{ movieDb.id }}_1"
+                  [checked]="RatingCompare(movieDb.rating, 1)"
+                  (click)="ratingClick($event, movieDb, 1)"
+                /><label for="{{ movieDb.id }}_1">☆</label>
+              </div>
+            </ng-container>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      id="image"
+      class="blur_back bright_back"
+      style=" background: url({{ movieDb.image }})"
+    ></div>
+  </div>
+</section>

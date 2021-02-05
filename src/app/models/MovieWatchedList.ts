@@ -12,6 +12,6 @@ export interface MovieWatchedList{
     movieid:number,
     reviewid:number,
     content:string,
-    userRating:number,
+    rating:number,
     reviewMovieId:number
 }
