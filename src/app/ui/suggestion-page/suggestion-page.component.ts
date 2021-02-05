@@ -1,5 +1,4 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/Movie';
 import { DataService } from 'src/app/data.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -25,10 +24,6 @@ export class SuggestionPageComponent implements OnInit {
   public lowReviews: Array<Review>;
   public displayAddButton: boolean;
 
-  get movies(): Array<Movie> {
-    return this.data.getMovies();
-
-  }
   constructor(private data: DataService, private HttpClient: HttpClient) {
     this.suggestedMovie = {
       id: 0,
@@ -52,24 +47,6 @@ export class SuggestionPageComponent implements OnInit {
 
     this.displayAddButton = true;
   }
-
-
-
-  getMovies() {
-
-    this.GetAllMovies().subscribe({
-      next: (result: Array<MovieDb>) => {
-        this.moviesDbs = result;
-      },
-      error: (err: any) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log(this.moviesDbs);
-      }
-    })
-  }
-
 
   addMovieClicked(operation: MouseEvent) {
     let userId = Number(localStorage.getItem('userId'));
@@ -114,14 +91,6 @@ export class SuggestionPageComponent implements OnInit {
       },
       complete: () => {
         console.log(this.goodReviews);
-      }
-    });
-  }
-
-  GetAllMovies(): Observable<Array<MovieDb>> {
-    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/getAllMovies', {
-      headers: {
-        'Content-Type': 'application/json'
       }
     });
   }
@@ -235,7 +204,6 @@ export class SuggestionPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getMovies();
     if (this.data.getSuggestedMovie().id === 0) {
       this.SuggestAMovie();
     }

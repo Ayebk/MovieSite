@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movie } from '../app/models/Movie';
 import { MovieDb} from './models/MovieDb';
 
 @Injectable({
@@ -8,18 +7,9 @@ import { MovieDb} from './models/MovieDb';
 })
 export class DataService {
 
-  
-  protected movies: Array<Movie> = [];
-  
   protected suggestedMovie:MovieDb;
 
   constructor(private http: HttpClient) { 
-
-    this.http.get<Array<Movie>>('../assets/Movies.json')
-             .subscribe(Movies=> {
-               this.movies = Movies;
-             });
-             
     //empty suggested movie on init
     this.suggestedMovie = {
             id:0,
@@ -34,11 +24,6 @@ export class DataService {
             count:0
     }
   }
-
-  getMovies(): any[] {
-    return this.movies;
-  }
-
   //this function is called when the suggest button is clicked
   setSuggestionMovie(movie:MovieDb){
     this.suggestedMovie = movie;
