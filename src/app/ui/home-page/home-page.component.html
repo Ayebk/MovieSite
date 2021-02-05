@@ -1,24 +1,9 @@
 
         <!-- main movies -->
-
-
         <section id="main">
-
-
-
-
             <h1>New Releases</h1>
-      
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              
               <div class="carousel-inner">
-
-                <!---
-                <div *ngFor="let movieDb of moviesDbs">
-                  <img src = {{movieDb.image}} />
-                </div>
-              -->
-              <!---->
                 <div class="carousel-item active">
                   <img class="d-block w-100" src="{{moviesDbs[0].image}}" (click)="movieClicked($event,moviesDbs[0])">
                 </div>
@@ -34,31 +19,14 @@
                 <span class="carousel-control-next-icon " aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
-              
             </div>
-              
               </section>
-      
       <div></div>
-      
-      
-      
-      
-      
-      
-      
               <!-- Action movies -->
-      
-      
               <section id="upcoming">
-      
                 <h1 id="title" style="color: red;">Action Movies</h1>
-              
               <!--Carousel Wrapper-->
               <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-              
-               
-              
                   <!--Controls-->
                   <div class="controls-top">
                     <a class="btn-floating btn-outline-danger fa-3x" href="#multi-item-example" data-slide="prev"><i 
@@ -67,12 +35,8 @@
                         class="fas fa-chevron-right"></i></a>
                   </div>
                   <!--/.Controls-->
-                
-               
-              
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
-              
                   <!--First slide-->
                   <div class="carousel-item active">
                 
@@ -83,14 +47,9 @@
                           src="{{movieDb.image}}" (click)="movieClicked($event,movieDb)">
                        </a>
                       </div>
-                    </div>
-              
-  
-                              
-              
+                    </div>  
                   </div>
                   <!--/.First slide-->
-              
                   <!--Second slide-->
                   <div class="carousel-item">
                 
@@ -102,43 +61,18 @@
                         </a>
                        </div>
                      </div>
-               
-                    
-              
                   </div>
                   <!--/.Second slide-->
-              
                 </div>
                 <!--/.Slides-->
-              
               </div>
               <!--/.Carousel Wrapper-->
-              
               </section>
-      
-      
-      
-      
-      
-      
               <!-- comedy movies -->
-      
-      
-             
-
-
-
-            
-      
             <section id="upcoming">
-      
               <h1 id="title" style="color: red;">Comedy Movies</h1>
-            
             <!--Carousel Wrapper-->
             <div id="multi-item-example1" class="carousel slide carousel-multi-item" data-ride="carousel">
-            
-             
-            
                 <!--Controls-->
                 <div class="controls-top">
                   <a class="btn-floating btn-outline-danger fa-3x" href="#multi-item-example1" data-slide="prev"><i 
@@ -147,15 +81,10 @@
                       class="fas fa-chevron-right"></i></a>
                 </div>
                 <!--/.Controls-->
-              
-             
-            
               <!--Slides-->
               <div class="carousel-inner" role="listbox">
-            
                 <!--First slide-->
                 <div class="carousel-item active">
-              
                   <div *ngFor="let movieDb of comedyMovies.slice(0, 4) " class="col-md-3" style="float:left">
                    <div class="card mb-2">
                      <a>
@@ -164,16 +93,10 @@
                      </a>
                     </div>
                   </div>
-            
-
-                            
-            
                 </div>
                 <!--/.First slide-->
-            
                 <!--Second slide-->
                 <div class="carousel-item">
-              
                   <div *ngFor="let movieDb of comedyMovies.slice(4, 8) " class="col-md-3" style="float:left">
                     <div class="card mb-2">
                       <a>
@@ -182,51 +105,18 @@
                       </a>
                      </div>
                    </div>
-             
-                  
-            
                 </div>
                 <!--/.Second slide-->
-            
               </div>
               <!--/.Slides-->
-            
             </div>
             <!--/.Carousel Wrapper-->
-            
             </section>
-      
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
       <!--cards slide -- "upcoming moives with info"-->>
-      
-      
       <section id="upcoming">
-      
         <h1>Upcoming Movies</h1>
-      
       <!--Carousel Wrapper-->
       <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel">
-      
-       
-      
           <!--Controls-->
           <div class="controls-top">
             <a class="btn-floating btn-outline-dark fa-3x" href="#multi-item-example2" data-slide="prev"><i 
@@ -235,15 +125,10 @@
                 class="fas fa-chevron-right"></i></a>
           </div>
           <!--/.Controls-->
-        
-       
-      
         <!--Slides-->
         <div class="carousel-inner" role="listbox">
-      
           <!--First slide-->
           <div class="carousel-item active">
-      
             <div *ngFor="let movieDb of moviesDbs.slice(0, 4) " class="col-md-3" style="float:left">
              <div class="card mb-2">
                 <img class="card-img-top" 
@@ -255,15 +140,10 @@
                 </div>
               </div>
             </div>
-      
-            
-            
           </div>
           <!--/.First slide-->
-      
           <!--Second slide-->
           <div class="carousel-item">
-      
             <div *ngFor="let movieDb of moviesDbs.slice(4, 8) " class="col-md-3" style="float:left">
               <div class="card mb-2">
                  <img class="card-img-top" 
@@ -275,27 +155,14 @@
                  </div>
                </div>
              </div>
-       
-           
-      
           </div>
           <!--/.Second slide-->
-      
         </div>
         <!--/.Slides-->
-      
       </div>
       <!--/.Carousel Wrapper-->
-      
       </section>
-      
-      
-      
-      
-      
-      
       <!---- trust lgooosss-->>
-      
       <div class="container">
         <div class="footer_trust_top">
           <p>AS FEATURED IN</p>
@@ -303,10 +170,5 @@
         </div><div class="col-lg-12 col-md-12 col-xs-12 footer_main">
         <div class="col-xs-5 col-md-3 footer-left">
           </div></div>
-          <!--
-          <div *ngFor="let movieDb of moviesDbs">
-            <img src = {{movieDb.image}} />
-          </div>
-          --->
       
         
