@@ -80,7 +80,7 @@ export class HomePageComponent implements OnInit {
   }
 
   GetAllMovies() : Observable<Array<MovieDb>>{
-    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/All',{
+    return this.HttpClient.get<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/All',{
       headers:{
         'Content-Type':'application/json'
       }
@@ -88,7 +88,7 @@ export class HomePageComponent implements OnInit {
   }
 
   GetAllAction() : Observable<Array<MovieDb>>{
-    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/AllAction',{
+    return this.HttpClient.get<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/AllAction',{
       headers:{
         'Content-Type':'application/json'
       }
@@ -96,7 +96,7 @@ export class HomePageComponent implements OnInit {
   }
 
   GetAllComedy() : Observable<Array<MovieDb>>{
-    return this.HttpClient.get<Array<MovieDb>>('http://localhost:65000/movie/AllComedy',{
+    return this.HttpClient.get<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/AllComedy',{
       headers:{
         'Content-Type':'application/json'
       }

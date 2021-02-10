@@ -12,6 +12,8 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
+  protected backEndBaseUrl:String;
+
   protected suggestedMovie:MovieDb;
 
   protected moviesdb : Array<MovieDb>;
@@ -33,6 +35,7 @@ export class DataService {
             releaseYear:"",
             count:0
     }
+    this.backEndBaseUrl = "http://localhost:65000"
   }
 
   Getmoviesdb(): Array<MovieDb>{
@@ -71,8 +74,12 @@ export class DataService {
     })      
   }
 
+  getBackEndUrl():String{
+    return this.backEndBaseUrl;
+  }
+
   GetAllMovies() : Observable<Array<MovieDb>>{
-    return this.http.get<Array<MovieDb>>('http://localhost:65000/movie/All',{
+    return this.http.get<Array<MovieDb>>(this.getBackEndUrl() + '/movie/All',{
       headers:{
         'Content-Type':'application/json'
       }

@@ -96,7 +96,7 @@ export class SuggestionPageComponent implements OnInit {
   }
 
   GetGoodReviews(id: number): Observable<Array<Review>> {
-    return this.HttpClient.post<Array<Review>>('http://localhost:65000/review/GetGoodReviews', {
+    return this.HttpClient.post<Array<Review>>(this.data.getBackEndUrl() + '/review/GetGoodReviews', {
       id: id
     },
       {
@@ -107,7 +107,7 @@ export class SuggestionPageComponent implements OnInit {
   }
 
   GetLowReviews(id: number): Observable<Array<Review>> {
-    return this.HttpClient.post<Array<Review>>('http://localhost:65000/review/GetLowReviews', {
+    return this.HttpClient.post<Array<Review>>(this.data.getBackEndUrl() + '/review/GetLowReviews', {
       id: id
     },
       {
@@ -142,7 +142,7 @@ export class SuggestionPageComponent implements OnInit {
 
   //Http call to post suggest details, returns a movie
   SuggestMoviePost(id: number): Observable<Array<MovieDb>> {
-    return this.HttpClient.post<Array<MovieDb>>('http://localhost:65000/movie/Suggest', {
+    return this.HttpClient.post<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/Suggest', {
       id: id
     },
       {
@@ -153,7 +153,7 @@ export class SuggestionPageComponent implements OnInit {
   }
 
   addMovieToWatchList(movieid: number, userid: number): Observable<string> {
-    return this.HttpClient.post<string>('http://localhost:65000/watched/addToWatchedList', {
+    return this.HttpClient.post<string>(this.data.getBackEndUrl() + '/watched/addToWatchedList', {
       movieid: movieid,
       userid: userid
     },
@@ -192,7 +192,7 @@ export class SuggestionPageComponent implements OnInit {
   }
 
   checkIfUserHasWatchedTheMovieHttpCall(movieid: number,userid: number): Observable<string> {
-    return this.HttpClient.post<string>('http://localhost:65000/watched/checkIfUserWatched', {
+    return this.HttpClient.post<string>(this.data.getBackEndUrl() + '/watched/checkIfUserWatched', {
       movieid: movieid,
       userid: userid
     },

@@ -13,28 +13,31 @@ import { DataService } from 'src/app/data.service';
 @Injectable()
 export class HeaderComponent implements OnInit {
 
-  public userLoggedIn:boolean;
+  public userLoggedIn: boolean;
 
-  public username:string;
+  public moviesDbs: Array<MovieDb>
 
-  constructor(private HttpClient: HttpClient,private data: DataService) {
-     this.userLoggedIn = false;
-     this.username = ""
-    }
+  public username: string;
+
+  constructor(private HttpClient: HttpClient, private data: DataService) {
+    this.userLoggedIn = false;
+    this.username = ""
+    this.moviesDbs = [];
+  }
 
 
   //a function thats called whenever the login button is clicked, this function then calls the logInPost
-  logIn(operation:MouseEvent, username:string, password:string){
-    this.logInPost(username,password).subscribe({
-      next:(result:string) =>{
+  logIn(operation: MouseEvent, username: string, password: string) {
+    this.logInPost(username, password).subscribe({
+      next: (result: string) => {
         console.log(result);
         //storing the user id in the localStorage
-        localStorage.setItem('userId',result);
-        localStorage.setItem('username',this.username);
+        localStorage.setItem('userId', result);
+        localStorage.setItem('username', this.username);
         this.ngOnInit();
-        
+
       },
-      error:(err:any)=>{
+      error: (err: any) => {
         console.log(err);
         username = "";
       }
@@ -42,38 +45,63 @@ export class HeaderComponent implements OnInit {
   }
 
   //a function that is called when the logout button is clicked
-  logOut(operation:MouseEvent){
+  logOut(operation: MouseEvent) {
     localStorage.removeItem('userId');
-    localStorage.setItem('userId','none');
+    localStorage.setItem('userId', 'none');
     this.username = "";
     this.userLoggedIn = false;
   }
 
   //Http call to post login details, returns the user id on success
-  logInPost(username:string, password:string) : Observable<string>{
+  logInPost(username: string, password: string): Observable<string> {
 
     this.username = username;
-    return this.HttpClient.post<string>('http://localhost:65000/user/login',{
-      username:username,
-      password:password
+    return this.HttpClient.post<string>(this.data.getBackEndUrl() + '/user/login', {
+      username: username,
+      password: password
     },
-    {
-    headers:new HttpHeaders({
-      'Content-Type':'application/json'
-    })
-  })
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
   }
-  
+
+  SearchLikeMovie(input: String) {
+    if (input !== "") {
+      this.getMovieLikeInput(input).subscribe({
+        next: (result: Array<MovieDb>) => {
+          this.moviesDbs = result;
+        },
+        error: (err: any) => {
+          console.log(err);
+        }
+      })
+    }else{
+      this.moviesDbs = [];
+    }
+  }
+
+  getMovieLikeInput(input: String): Observable<Array<MovieDb>> {
+    return this.HttpClient.post<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/Like', {
+      input: input
+    },
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
+  }
+
   ngOnInit(): void {
 
     let userId = Number(localStorage.getItem('userId'));
-    if(isNaN(userId)){
+    if (isNaN(userId)) {
       this.userLoggedIn = false;
       console.log(userId);
       console.log("not logged on");
     }
-    else
-    {
+    else {
       this.userLoggedIn = true;
       this.username = String(localStorage.getItem('username'));
       console.log(userId);

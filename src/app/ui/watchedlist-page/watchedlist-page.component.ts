@@ -16,7 +16,7 @@ export class WatchedlistPageComponent implements OnInit {
 
   public moviesDbs: Array<MovieWatchedList>;
   public userId:number;
- 
+
   constructor(private data: DataService, private HttpClient: HttpClient) { this.moviesDbs = []; 
   this.userId = NaN;}
 
@@ -54,7 +54,7 @@ export class WatchedlistPageComponent implements OnInit {
 
 
   GetWatchedList(userid: number): Observable<Array<MovieWatchedList>> {
-    return this.HttpClient.post<Array<MovieWatchedList>>('http://localhost:65000/watched/WatchedList',
+    return this.HttpClient.post<Array<MovieWatchedList>>(this.data.getBackEndUrl() + '/watched/WatchedList',
       {
         userid: userid
       }
@@ -109,7 +109,7 @@ export class WatchedlistPageComponent implements OnInit {
   }
 
   UpdateReviewHttpCall(movieDb: MovieWatchedList, userId: number): Observable<string> {
-    return this.HttpClient.post<string>('http://localhost:65000/review/PostReview', {
+    return this.HttpClient.post<string>(this.data.getBackEndUrl() + '/review/PostReview', {
       id: movieDb.reviewid,
       movieid: movieDb.movieid,
       userid: userId,

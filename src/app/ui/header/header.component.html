@@ -8,8 +8,8 @@
     </a>
     <!---search--->
     <div class="search">
-        <input type="text" placeholder="Find your movie" size="60" [(ngModel)]="title" >
-        <div *ngFor="let movieDb of  moviesDbs | dateFitler:title" >
+        <input #searchinput type="text" placeholder="Find your movie" size="60" (input)="SearchLikeMovie(searchinput.value)" >
+        <div *ngFor="let movieDb of  moviesDbs" >
             {{movieDb.title}}
             
             </div>
