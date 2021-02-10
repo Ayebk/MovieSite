@@ -1,5 +1,4 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/Movie';
 import { DataService } from 'src/app/data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -17,9 +16,7 @@ export class WatchedlistPageComponent implements OnInit {
 
   public moviesDbs: Array<MovieWatchedList>;
   public userId:number;
-  get movies(): Array<Movie> {
-    return this.data.getMovies();
-  }
+ 
   constructor(private data: DataService, private HttpClient: HttpClient) { this.moviesDbs = []; 
   this.userId = NaN;}
 

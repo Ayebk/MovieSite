@@ -8,7 +8,12 @@
     </a>
     <!---search--->
     <div class="search">
-        <input type="text" placeholder="Find your movie" size="60">
+        <input type="text" placeholder="Find your movie" size="60" [(ngModel)]="title" >
+        <div *ngFor="let movieDb of  moviesDbs | dateFitler:title" >
+            {{movieDb.title}}
+            
+            </div>
+            
         <button aria-expanded="false" type="submit"><i class="fa fa-search "></i></button>
     </div>
     <!----Suggest----->

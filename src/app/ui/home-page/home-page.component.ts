@@ -1,5 +1,4 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/Movie';
 import { DataService } from 'src/app/data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,9 +23,7 @@ export class HomePageComponent implements OnInit {
 
   
 
-  get movies(): Array<Movie> {
-    return this.data.getMovies();
-  }
+
   constructor(private data: DataService,private HttpClient: HttpClient, private router:Router) { 
     this.moviesDbs = [];
     this.actionMovies = [];
@@ -73,18 +70,8 @@ export class HomePageComponent implements OnInit {
         console.log(this.moviesDbs);
       }
     })
-    
-    
-    /*
-    this.GetAllMovies().subscribe({
-      next:(result:string) =>{
-        console.log(result);
-      },
-      error:(err:any)=>{
-        console.log(err);
-      }
-    })
-    */
+     
+
   }
 
   movieClicked(operation:MouseEvent, movie:MovieDb){

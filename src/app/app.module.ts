@@ -9,6 +9,8 @@ import { WatchedlistPageComponent } from './ui/watchedlist-page/watchedlist-page
 import { HeaderComponent } from './ui/header/header.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import { HttpClientModule} from '@angular/common/http';
+import { DateFilterPipe } from './date-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { HttpClientModule} from '@angular/common/http';
     SuggestionPageComponent,
     WatchedlistPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DateFilterPipe
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
