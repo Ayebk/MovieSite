@@ -3,6 +3,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieDb } from 'src/app/models/MovieDb';
 import { DataService } from 'src/app/data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,10 +20,19 @@ export class HeaderComponent implements OnInit {
 
   public username: string;
 
-  constructor(private HttpClient: HttpClient, private data: DataService) {
+  public actionMovies:Array<MovieDb>;
+
+  public comedyMovies:Array<MovieDb>;
+
+  constructor(private HttpClient: HttpClient, private data: DataService, private router:Router ) {
     this.userLoggedIn = false;
     this.username = ""
     this.moviesDbs = [];
+
+    this.actionMovies = [];
+    this.comedyMovies = [];
+    
+  
   }
 
 
@@ -91,6 +101,80 @@ export class HeaderComponent implements OnInit {
           'Content-Type': 'application/json'
         })
       })
+  }
+
+  getMovies(){
+
+    this.GetAllMovies().subscribe({
+      next:(result:Array<MovieDb>) => {
+        this.moviesDbs = result;
+      },
+      error:(err:any)=>{
+        console.log(err);
+      },
+      complete:() =>{
+        console.log(this.moviesDbs);
+      }
+    })
+
+    this.GetAllAction().subscribe({
+      next:(result:Array<MovieDb>) => {
+        this.actionMovies = result;
+      },
+      error:(err:any)=>{
+        console.log(err);
+      },
+      complete:() =>{
+        console.log(this.moviesDbs);
+      }
+    })
+
+    this.GetAllComedy().subscribe({
+      next:(result:Array<MovieDb>) => {
+        this.comedyMovies = result;
+      },
+      error:(err:any)=>{
+        console.log(err);
+      },
+      complete:() =>{
+        console.log(this.moviesDbs);
+      }
+    })
+     
+
+  }
+
+  GetAllAction() : Observable<Array<MovieDb>>{
+    return this.HttpClient.get<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/AllAction',{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    });
+  }
+
+  GetAllComedy() : Observable<Array<MovieDb>>{
+    return this.HttpClient.get<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/AllComedy',{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    });
+  }
+
+  GetAllMovies() : Observable<Array<MovieDb>>{
+    return this.HttpClient.get<Array<MovieDb>>(this.data.getBackEndUrl() + '/movie/All',{
+      headers:{
+        'Content-Type':'application/json'
+      }
+    });
+  }
+
+  movieClicked(operation:MouseEvent, movie:MovieDb){
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+  }
+  this.router.onSameUrlNavigation = 'reload';
+    this.data.setSuggestionMovie(movie);
+    this.router.navigate(['/suggetion']);
   }
 
   ngOnInit(): void {

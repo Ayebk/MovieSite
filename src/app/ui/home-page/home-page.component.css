@@ -1,6 +1,7 @@
 
 
 #main{
+  
     display:block;
     width: 40%;
     margin: auto;
@@ -167,6 +168,13 @@
     
     @media screen and (max-width: 770px) {
    
+
+      .carousel-inner .carousel-item>div {
+        display: none;
+    }
+    .carousel-inner .carousel-item>div:first-child {
+      display: block;
+  }
       #main{
        
         width: 60%;
